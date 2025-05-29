@@ -1,0 +1,46 @@
+<div
+  class="fab-container"
+  [class.open]="isOpen"
+  [class.show-bubble]="!isOpen"
+  [class.hide-bubble]="isOpen"
+>
+  <!-- Botón principal -->
+  <button
+    class="fab main-fab"
+    (click)="toggleMenu()"
+    [class.rotate-forward]="rotateForward"
+    [class.rotate-backward]="!rotateForward"
+    [class.pulsing]="!isOpen"
+  >
+    <i [ngClass]="isOpen ? 'fas fa-times' : 'fas fa-comments'"></i>
+  </button>
+
+  <!-- Burbuja principal -->
+  <div class="fab-bubble" *ngIf="bubbleVisible && !hoveredLabel">
+    Contact Us
+  </div>
+
+  <!-- Botones secundarios con hover -->
+  <div class="fab-options">
+    <ng-container *ngFor="let option of socialOptions; let i = index">
+      <a
+        [href]="option.link"
+        target="_blank"
+        class="fab"
+        [ngClass]="option.class"
+        (mouseenter)="onHover(option.label, i)"
+        (mouseleave)="onLeave()"
+      >
+        <i [class]="option.icon"></i>
+
+        <!-- Burbuja por hover -->
+        <div
+          class="fab-bubble hover-bubble"
+          *ngIf="hoveredIndex === i"
+        >
+          {{ option.label }}
+        </div>
+      </a>
+    </ng-container>
+  </div>
+</div>

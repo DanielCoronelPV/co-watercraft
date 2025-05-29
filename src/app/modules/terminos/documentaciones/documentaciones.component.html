@@ -1,0 +1,48 @@
+<div class="w-full h-full mx-auto max-w-7xl">
+  <header class="bg-white p-8">
+    <div
+      class="bg-cover bg-center h-64 rounded-md"
+      style="background-image: url('../../../assets/img/bienvenida.png')"
+    >
+      <div
+        class="flex items-center justify-center h-full bg-gray-900 bg-opacity-50 rounded-md"
+      >
+        <a href="/" class="flex items-center">
+          <img
+            src="/assets/img/logo_precisapp_blanco.svg"
+            style="height: 3.5rem"
+            alt="PrecisApp Logo"
+          />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="bg-white p-8">
+    <nav class="mb-4">
+      <ul class="flex space-x-4 text-sm text-gray-600">
+        <li><a href="/" class="hover:underline">Inicio</a></li>
+        <li>/</li>
+        <li><a href="/terminos/documentaciones" class="hover:underline">Documentaciones</a></li>
+      </ul>
+    </nav>
+
+    <!-- <div class="mt-8"> -->
+    <h2 class="text-xl font-extrabold text-gray-700">Documentaciones</h2>
+    <ul class="space-y-2">
+      <li *ngFor="let item of documentos">
+        <a
+          href="{{ item.urlArchivo }}"
+          target="_blank"
+          class="flex items-center justify-between p-4 bg-white rounded-md shadow hover:bg-gray-50"
+        >
+          <span>{{ item.nombre }}</span>
+          <i class="fas fa-file-alt"></i>
+        </a>
+      </li>
+    </ul>
+    <!-- </div> -->
+  </div>
+
+  <app-footer></app-footer>
+</div>

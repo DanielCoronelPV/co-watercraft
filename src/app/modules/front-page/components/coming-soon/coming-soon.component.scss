@@ -1,0 +1,17 @@
+.font-Ethnocentric {
+  font-family: "Ethnocentric Italic", sans-serif !important;
+  color: #101c3c !important;
+  font-size: 24px !important;
+  @media only screen and (min-width: 768px) {
+    font-size: 36px !important;
+  }
+}
+
+.font-candide {
+  font-family: "Candide Bold Italic", sans-serif !important;
+  color: #101c3c !important;
+  font-size: 17px !important;
+  @media only screen and (min-width: 768px) {
+    font-size: 29px !important;
+  }
+}

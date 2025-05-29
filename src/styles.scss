@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~swiper/swiper-bundle.min.css";
+@font-face {
+  font-family: 'Ethnocentric Italic';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ethnocentric Italic Regular'), local('ethnocentric-italic-Regular'), url(assets/fonts/ethnocentric-italic.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Candide Bold Italic';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Candide Bold Italic'), local('candide-bold-italic'), url(assets/fonts/candide-bold-italic.otf) format('falsetype');
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,199 @@
+<div class="flex items-center bg-center bg-no-repeat bg-cover sm:h-[24.5rem] h-[200px]"
+  style="background-image: url('../../../assets/img/prestadores-fondo.jpg')">
+  <div class="w-full text-center">
+    <div
+      class="flex items-center justify-center w-full text-lg font-extrabold text-gray-700 bg-white font-source h-14 2xl:text-3xl sm:h-24 sm:text-3xl md:bg-white bg-opacity-80 lg:bg-opacity-80 md:bg-opacity-80">
+      <div class="mr-2 text-lg font-extrabold text-orange-700 sm:text-3xl">
+        Guía
+      </div>
+      <div>de Prestadores</div>
+    </div>
+  </div>
+</div>
+
+<section class="pt-5 text-gray-600 lg:pt-24 md:pt-20 lg:flex lg:justify-center">
+  <div class="h-full bg-white lg:px-6 lg:pb-8 lg:pt-5">
+    <div class="container flex justify-center mx-auto lg:justify-start">
+      <div class="justify-center hidden lg:justify-start lg:block">
+        <div class="px-8">
+          <div class="flex items-center justify-center w-full h-20 text-center select-none" data-aos="fade-up"
+            data-aos-duration="1500">
+            <h2 class="title-section-color">
+              Especialidades
+              <div class="line"></div>
+            </h2>
+          </div>
+          <ul class="flex font-source flex-col mt-2 gap-y-0.5">
+            <li
+              class="flex justify-between w-full p-2 text-sm font-bold text-gray-600 rounded-md cursor-pointer hover:bg-gray-700 hover:text-white">
+              Todos
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m9 5 7 7-7 7" />
+              </svg>
+            </li>
+            <li
+              class="flex justify-between w-full p-2 text-sm font-bold text-gray-600 rounded-md cursor-pointer hover:bg-gray-700 hover:text-white">
+              Ambulancias
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m9 5 7 7-7 7" />
+              </svg>
+            </li>
+            <li
+              class="flex justify-between w-full p-2 text-sm font-bold text-gray-600 rounded-md cursor-pointer hover:bg-gray-700 hover:text-white">
+              Centro de Diagnóstico
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m9 5 7 7-7 7" />
+              </svg>
+            </li>
+            <li
+              class="flex justify-between w-full p-2 text-sm font-bold text-gray-600 rounded-md cursor-pointer hover:bg-gray-700 hover:text-white">
+              Laboratorios
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m9 5 7 7-7 7" />
+              </svg>
+            </li>
+            <li
+              class="flex justify-between w-full p-2 text-sm font-bold text-gray-600 rounded-md cursor-pointer gap-x-2 whitespace-nowrap hover:bg-gray-700 hover:text-white">
+              Sanatorios, Clínicas y Hospitales
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m9 5 7 7-7 7" />
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-center w-full h-20 mt-5 text-center select-none lg:hidden" data-aos="fade-up"
+    data-aos-duration="1500">
+    <h2 class="title-section-color">
+      Especialidades
+      <div class="line"></div>
+    </h2>
+  </div>
+
+  <div class="flex items-center justify-center w-full my-2 lg:hidden">
+    <form class="w-[346px] font-source md:w-[610px] md:mx-2">
+      <select  id="countries"
+        class="block w-full p-2 text-sm text-gray-700 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option selected [value]="4">Todos</option>
+        <option [value]="0">Ambulancias</option>
+        <option [value]="1">Centro de Diagnóstico</option>
+        <option [value]="2">Laboratorios</option>
+        <option [value]="3">
+          Sanatorios, Clínicas y Hospitales
+        </option>
+      </select>
+    </form>
+  </div>
+
+  <div class="relative flex flex-col p-0 overflow-x-auto lg:p-4">
+    <div class="flex justify-center mb-2 font-source lg:justify-start md:flex-row">
+      <label for="filtroCiudad" class="sr-only">Buscar</label>
+
+      <div class="relative my-1 lg:my-3">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+          </svg>
+        </div>
+        <input type="text" id="filtroCiudad"
+          class="block w-[346px] md:w-[610px] lg:w-[608px] xl:w-[280px] 2xl:w-[346px] p-2 pl-10 text-sm text-gray-700 border border-gray-300 rounded-lg bg-slate-100 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Buscar" />
+      </div>
+    </div>
+
+    <div
+      class="xl:w-[1038px] h-[450px] w-auto  flex justify-center items-center text-xl gap-y-2 2xl:gap-2 xl:gap-4 md:gap-2 lg:grid-cols-2 lg:gap-2 lg:gap-y-2">
+      Sin datos por el momento...
+    </div>
+
+    <div class="flex justify-center">
+      <div
+        class="grid grid-cols-1 gap-y-2 2xl:gap-2 2xl:grid-cols-3 xl:gap-4 xl:grid-cols-3 md:grid-cols-2 md:gap-2 lg:grid-cols-2 lg:gap-2 lg:gap-y-2">
+        <a
+          class="flex bg-contain bg-center bg-no-repeat justify-center items-center p-6 border border-gray-300 rounded-lg shadow w-[346px] 2xl:w-[346px] h-[150px] xl:w-[280px] md:w-[300px] hover:bg-gray-100">
+          <div class="flex flex-col items-center justify-center">
+            <div class="mb-2 text-base font-extrabold tracking-tight text-center text-gray-700 font-source">
+               prestador.nombre
+            </div>
+            <div class="font-normal text-center text-gray-700 font-source">
+               prestador.ciudad
+            </div>
+            <!-- Icono del ojo debajo del texto de ciudad -->
+            <div class="mt-2">
+              <i class="cursor-pointer fa-solid fa-circle-plus fa-2xl"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="flex justify-center my-5">
+      <button  type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Cargar más</button>
+    </div>
+
+
+  </div>
+</section>
+
+<div class="max-w-md mx-6 mt-10 md:mx-auto">
+  <div class="mb-5 text-xl font-semibold text-center text-gray-700">Generar PDF</div>
+  <form >
+    <div class="mb-4">
+      <label for="tipoPrestador" class="block mb-2 text-sm font-medium text-gray-700">Seleccione el tipo de
+        prestador*</label>
+      <select id="tipoPrestador"
+        class="block w-full p-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+        formControlName="prestadorFilter">
+        <option default selected value="Todos">Todos</option>
+        <option >item.nombre</option>
+      </select>
+    </div>
+
+    <div class="mb-4">
+      <label for="especialidad" class="block mb-2 text-sm font-medium text-gray-700">Seleccione un departamento*</label>
+      <select  id="especialidad"
+        class="block w-full p-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+        formControlName="departamentoFilter">
+        <option default selected value="Todos">Todos</option>
+        <option >item</option>
+      </select>
+    </div>
+
+    <div class="w-full mb-5">
+      <div class="selectBox" >
+        <select
+          class="block w-full p-2 text-sm text-gray-400 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <option>Selecciona las ciudades</option>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="checkboxes"
+        class="flex w-auto p-2 text-gray-900 border border-gray-300 sm:p-3 focus:ring-blue-500 bg-gray-50 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <label >
+          <input class="mr-2 rounded-full"  />
+          ciudad </label>
+      </div>
+    </div>
+
+
+
+    <button type="submit"
+      class="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300">Consultar</button>
+  </form>
+</div>

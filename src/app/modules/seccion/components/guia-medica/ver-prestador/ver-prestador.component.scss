@@ -1,0 +1,34 @@
+.title-section-color {
+  font-family: 'Source Sans Pro', sans-serif !important;
+  // color: #D5832B;
+  color: #252524;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 700;
+  @media (min-width: 640px) {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+  }
+}
+
+.line {
+  // border-bottom: 3px solid #efca19;
+  border-bottom: 3px solid #D5832B;
+  border-radius: 30px;
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+}
+
+.font-source {
+  font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.scrollable-container {
+  max-height: 500px;
+  @media (min-width: 640px) {
+    max-height: 700px;
+  }
+  overflow-y: auto;
+}

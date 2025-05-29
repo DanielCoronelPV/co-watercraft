@@ -1,0 +1,78 @@
+<nav
+  class="fixed top-0 z-20 w-full transition-all ease-in-out bg-transparent duration-800 start-0 animate-fade-down"
+  [ngClass]="{
+    'is-scrolled': isScrolled,
+    'bg-white': isScrolled,
+    'shadow-lg': isScrolled,
+    'animate-fade-up': !isScrolled,
+    'animate-fade-down': isScrolled
+  }"
+  (mouseenter)="onNavHover(true)"
+  (mouseleave)="onNavHover(true)"
+>
+  <div #pageContainer class="top-0 z-50 navbar">
+    <div
+      class="lg:px-7 navbar-center w-[100%] lg:justify-between"
+      [class.lg:flex]="isScrolled"
+    >
+      <div class="flex justify-between w-full lg:flex-row dropdown">
+        <label
+          tabindex="0"
+          class="flex justify-start rounded-none w-fit lg:hidden btn btn-ghost"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="flex-none w-8 h-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            [ngClass]="{
+              'text-gray-600': isScrolled,
+              'text-white': !isScrolled
+            }"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </label>
+        <div
+          class="flex items-center justify-center w-full pr-16 lg:justify-start lg:pr-0"
+        >
+          <img
+            name="home"
+            class="flex justify-center h-12 cursor-pointer lg:h-14"
+            [src]="logoSrc"
+            draggable="false"
+            oncontextmenu="return false;"
+          />
+        </div>
+        <div
+          class="w-full bg-white lg:w-fit lg:bg-transparent lg:navbar-center mt-14 lg:mt-0 lg:items-center lg:flex"
+          [class.dropdown-content]="isBelow1024"
+        >
+          <div class="w-full lg:flex">
+            <ul
+              tabindex="0"
+              class="flex flex-col items-start w-full p-2 mt-2 border-b-2 lg:border-none lg:mt-0 lg:p-0 menu menu-compact lg:bg-transparent lg:rounded-none lg:w-fit lg:px-3"
+              *ngFor="let page of filteredPages; let first = first"
+            >
+              <!-- page.text != 'Guia prestadores' && -->
+              <button
+                #buttons
+                class="select-none items-start lg:items-center px-4 lg:px-0 flex w-full lg:w-auto focus:outline-none {{
+                  buttonTextColor
+                }}"
+              >
+                {{ page.text }}
+              </button>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

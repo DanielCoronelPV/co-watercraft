@@ -1,0 +1,25 @@
+<div class="flex justify-center w-full">
+  <a
+    style="background-image: url('/assets/prestadores/{{ svg }}');"
+    class="flex bg-contain bg-center bg-no-repeat justify-center items-center p-6 border border-gray-300 rounded-lg shadow w-[346px] 2xl:w-[346px] h-[150px] xl:w-[280px] md:w-[300px] hover:bg-gray-100"
+  >
+    <div class="flex flex-col items-center justify-center">
+      <div
+        class="mb-2 text-base font-extrabold tracking-tight text-center text-gray-700 font-source"
+      >
+        {{ nombre }}
+      </div>
+      <div class="font-normal text-center text-gray-700 font-source">
+        {{ ciudad }}
+      </div>
+
+      <!-- Icono del ojo debajo del texto de ciudad -->
+      <div class="mt-2">
+        <i
+          (click)="verCard()"
+          class="cursor-pointer fa-solid fa-circle-plus fa-2xl"
+        ></i>
+      </div>
+    </div>
+  </a>
+</div>

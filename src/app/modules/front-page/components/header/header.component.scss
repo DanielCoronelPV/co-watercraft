@@ -1,0 +1,66 @@
+.focus\:outline-none {
+  outline: none;
+}
+
+.dark\:text-white {
+  color: #ffffff;
+}
+
+button:focus {
+  outline: none;
+  color: #fe4f00;
+  border-radius: 30px;
+}
+
+button:hover {
+  outline: none;
+  // color: #1c1c1c;
+}
+
+button {
+  font-family: 'Candide Bold Italic', sans-serif !important;
+  font-size: 12px !important;
+  font-family: inherit !important;
+  font-weight: 800;
+  @media (min-width: 1024px) {
+    font-size: 14px !important;
+  }
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+button:focus:after,
+button:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+button:after {
+  content: "";
+  pointer-events: none;
+  bottom: -10px;
+  @media (min-width: 1024px) {
+    bottom: -4px;
+  }
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fe4f00;
+  border-radius: 30px;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.justify {
+  @media (min-width: 1024px) {
+    justify-content: start !important;
+  }
+}

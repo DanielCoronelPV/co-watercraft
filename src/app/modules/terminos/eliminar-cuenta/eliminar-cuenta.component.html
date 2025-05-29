@@ -1,0 +1,114 @@
+<div
+  class="flex flex-col items-center justify-center w-screen h-screen bg-gray-100"
+>
+  <img
+    src="/assets/img/logo_precisapp.svg"
+    class="m-4 mx-auto w-52"
+    (click)="goToHome()"
+  />
+  <mat-stepper #stepper class="p-10 m-5 bg-white border rounded-lg h-4/5">
+    <mat-step [stepControl]="firstFormGroup" class="p-5">
+      <div class="max-w-md p-10 my-10 rounded-lg shadow-lg">
+        <p class="m-4 text-lg">Estimado/a usuario/a,</p>
+        <p class="m-4">
+          Le informamos que en cumplimiento de las regulaciones de privacidad,
+          procederemos a eliminar sus datos personales de nuestros registros en
+          un plazo de 90 días. Esto incluye su nombre, apellido, correo
+          electrónico, número de documento y teléfono.
+        </p>
+        <p class="m-4">
+          Tenga en cuenta que una vez que sus datos sean eliminados, no
+          tendremos acceso a ellos y no podremos recuperarlos. Si tiene alguna
+          pregunta o inquietud acerca de este proceso, por favor no dude en
+          ponerse en contacto con nuestro equipo de soporte.
+        </p>
+        <p>Agradecemos su comprensión y colaboración en este asunto.</p>
+        <p class="mt-4 text-center">
+          Atentamente, <br />
+          El equipo de <strong>PrecisApp</strong>
+        </p>
+        <div class="flex justify-center space-x-4">
+          <button class="btn btn-warning" matStepperNext>Continuar</button>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Rellene el formulario">
+      <!-- Formuario -->
+      <!-- <div class="flex flex-col items-center justify-center bg-blue-300"> -->
+      <form
+        class="w-full max-w-md p-6 mt-10 bg-white rounded-lg shadow-lg"
+        [formGroup]="formulario"
+        (submit)="sendEmail($event)"
+      >
+        <!-- <img src="/assets/img/logo_precisapp.png" class="m-4 mx-auto w-52" (click)="goToHome()"> -->
+        <label class="m-4 text-2xl font-bold text-center"
+          >Solicitar eliminación de cuenta de usuario</label
+        >
+        <div class="m-4">
+          <label for="nombre" class="block mb-2 font-medium">Nombre:</label>
+          <input
+            type="text"
+            required
+            formControlName="nombre"
+            class="w-full p-2 border-gray-300 rounded shadow-sm"
+            placeholder="Introduce tu nombre"
+            name="name"
+            id="name"
+          />
+        </div>
+        <div class="m-4">
+          <label for="documento" class="block mb-2 font-medium"
+            >Número de documento:</label
+          >
+          <input
+            type="text"
+            name="documento"
+            id="documento"
+            required
+            formControlName="documento"
+            class="w-full p-2 border-gray-300 rounded shadow-sm"
+            placeholder="Introduce tu número de documento"
+          />
+        </div>
+        <div class="m-4">
+          <label for="email" class="block mb-2 font-medium"
+            >Correo electrónico:</label
+          >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            formControlName="email"
+            class="w-full p-2 border-gray-300 rounded shadow-sm"
+            placeholder="Introduce tu correo electrónico"
+          />
+        </div>
+        <div class="m-4">
+          <label for="motivo" class="block mb-2 font-medium"
+            >¿Cuál es el motivo por el cual desea eliminar su cuenta?
+            *Opcional</label
+          >
+          <input
+            type="text"
+            name="message"
+            id="message"
+            formControlName="message"
+            class="w-full p-2 border-gray-300 rounded shadow-sm"
+            placeholder="Razón por la que desea eliminar la cuenta"
+          />
+        </div>
+        <div class="flex justify-center space-x-4">
+          <button
+            type="submit"
+            class="btn btn-warning"
+            [disabled]="!formIsValid"
+          >
+            Eliminar cuenta
+          </button>
+        </div>
+      </form>
+      <!-- </div> -->
+    </mat-step>
+  </mat-stepper>
+</div>

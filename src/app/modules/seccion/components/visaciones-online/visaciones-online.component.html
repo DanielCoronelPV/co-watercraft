@@ -1,0 +1,183 @@
+<div
+  class="flex items-center bg-center bg-no-repeat bg-cover sm:h-[24.5rem] h-[200px]"
+  style="background-image: url('../../../assets/img/prestadores-fondo.jpg')"
+>
+  <div class="w-full text-center">
+    <div
+      class="flex items-center justify-center w-full text-lg font-extrabold text-gray-700 bg-white font-source h-14 2xl:text-3xl sm:h-24 sm:text-3xl md:bg-white bg-opacity-80 lg:bg-opacity-80 md:bg-opacity-80"
+    >
+      <div class="mr-2 text-lg font-extrabold text-orange-700 sm:text-3xl">
+        Visaciones
+      </div>
+      <div>en Línea</div>
+    </div>
+  </div>
+</div>
+
+<section class="px-6 pt-16 pb-16 text-gray-600 lg:px-20 xl:px-24 lg:pt-24 lg:pb-24 body-font">
+  <div class="mx-auto overflow-hidden rounded-lg shadow-2xl md:flex">
+    <div
+      class="select-none relative flex w-full md:w-[50%] lg:w-[60%] md:h-auto sm:h-96 h-52 items-center justify-center bg-[url('/assets/img/analizando-solicitud.webp')] bg-cover bg-left"
+    >
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        class="absolute flex items-center justify-center w-full h-full"
+      >
+        <h2 class="title-section-color">
+          SOLICITA YÁ!
+          <div class="line"></div>
+        </h2>
+      </div>
+    </div>
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="ngSubmit($event)"
+      class="flex flex-col justify-end w-full md:w-[50%] lg:w-[40%] p-10 bg-white md:py-8"
+    >
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        class="flex items-center justify-center w-full h-full"
+      >
+        <h2 class="subTitle-section">
+          Completa tu solicitud
+          <div class="line-subTitle"></div>
+        </h2>
+      </div>
+      <div class="relative mb-2">
+        <label for="nombre" class="text-sm leading-7 text-gray-600 font-source"
+          >Nombre y Apellido
+          <span
+            *ngIf="isValidField('nombre')"
+            class="text-xs text-red-600 opacity-50 font-source text-end dark:text-red-500"
+          >
+            {{ getFieldError("nombre")! }}
+          </span></label
+        >
+        <input
+          formControlName="nombre"
+          type="text"
+          id="nombre"
+          name="nombre"
+          class="w-full px-3 py-1 text-base leading-7 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded-lg outline-none font-source focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+        />
+      </div>
+      <div class="relative mb-4">
+        <label for="cedula" class="text-sm leading-7 text-gray-600 font-source"
+          >C.I. o Documento
+          <span
+            *ngIf="isValidField('cedula')"
+            class="text-xs text-red-600 opacity-50 font-source text-end dark:text-red-500"
+          >
+            {{ getFieldError("cedula")! }}
+          </span></label
+        >
+        <input
+          formControlName="cedula"
+          type="text"
+          id="cedula"
+          name="cedula"
+          class="w-full px-3 py-1 text-base leading-7 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded-lg outline-none font-source focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+        />
+      </div>
+      <div class="relative mb-4">
+        <label
+          for="especialidad"
+          class="text-sm leading-7 text-gray-600 font-source"
+          >Selecciona una especialidad
+          <span
+            *ngIf="isValidField('especialidad')"
+            class="text-xs text-red-600 opacity-50 font-source text-end dark:text-red-500"
+          >
+            {{ getFieldError("especialidad")! }}
+          </span></label
+        >
+        <select
+          formControlName="especialidad"
+          (change)="changeEspecialidad($event)"
+          id="countries"
+          class="bg-gray-50 border font-source border-gray-300 text-gray-700 focus:ring-blue-200 text-sm rounded-lg focus:border-blue-500 block w-full p-2.5"
+        >
+          <option class="font-source" disabled value="0">Seleccione una especialidad</option>
+          <option class="font-source" value="Ambulancias">Ambulancias</option>
+          <option class="font-source" value="Centro de Diagnóstico">Centro de Diagnóstico</option>
+          <option class="font-source" value="Laboratorios">Laboratorios</option>
+          <option class="font-source" value="Sanatorios, Clínicas y Hospitales">
+            Sanatorios, Clínicas y Hospitales
+          </option>
+        </select>
+      </div>
+
+      <div
+        class="relative mb-4"
+        *ngIf="prestadoresFiltrados.length > 0 && especialistaSelected"
+      >
+        <label
+          for="prestador"
+          class="text-sm leading-7 text-gray-600 font-source"
+          >Selecciona un prestador</label
+        >
+        <select
+          formControlName="prestador"
+          class="bg-gray-50 border font-source border-gray-300 text-gray-700 focus:ring-blue-200 text-sm rounded-lg focus:border-blue-500 block w-full p-2.5"
+        >
+          <option class="font-source" disabled value="0">Seleccione un prestador</option>
+          <option
+          class="font-source"
+            [value]="prestador.nombre"
+            *ngFor="let prestador of prestadoresFiltrados"
+          >
+            {{ prestador.nombre }}-{{ prestador.ciudad }}
+          </option>
+        </select>
+      </div>
+      <div class="relative mb-4">
+        <label for="message" class="text-sm leading-7 text-gray-600 font-source"
+          >Mensaje
+          <span
+            *ngIf="isValidField('obs')"
+            class="text-xs text-red-600 opacity-50 font-source text-end dark:text-red-500"
+          >
+            {{ getFieldError("obs")! }}
+          </span>
+        </label>
+        <textarea
+          formControlName="obs"
+          id="message"
+          name="message"
+          class="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded-lg outline-none resize-none font-source focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+        ></textarea>
+      </div>
+
+      <button
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        type="submit"
+        [disabled]="form.errors"
+      >
+        <!-- [disabled]="myForm.errors" -->
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg
+              viewBox="0 0 16 16"
+              class="bi bi-whatsapp"
+              fill="currentColor"
+              height="16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+              style="color: white"
+            >
+              <path
+                fill="white"
+                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <span class="font-source">Enviar</span>
+      </button>
+    </form>
+  </div>
+</section>
