@@ -114,7 +114,7 @@
       }
 
       &.fab-phone {
-        background-color: #000; // Negro como pediste
+        background-color: #000;
       }
 
       &.fab-instagram {
@@ -126,6 +126,10 @@
           #d6249f 60%,
           #285aeb 90%
         );
+      }
+
+      &.fab-facebook {
+        background-color: #1877f2; // Azul oficial Facebook
       }
     }
 

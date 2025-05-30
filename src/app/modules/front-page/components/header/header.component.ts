@@ -30,8 +30,7 @@ export class HeaderComponent {
   isBelowViewport = false;
   isBelow1024: boolean = window.innerWidth < 1024; // Ya tienes esto, ¡perfecto!
 
-  logoSrc: string = '/assets/img/logo_co_watercraft.svg';
-  // Inicializa buttonTextColor basándose en el ancho inicial de la pantalla
+  logoSrc: string = '/assets/img/logo_co_watercraft_blanco_sinfondo_grande.png';
   buttonTextColor: string =
     window.innerWidth < 1025 ? 'text-black' : 'text-white';
 

@@ -18,7 +18,7 @@ button:hover {
 }
 
 button {
-  font-family: 'Candide Bold Italic', sans-serif !important;
+  font-family: "Candide Bold Italic", sans-serif !important;
   font-size: 12px !important;
   font-family: inherit !important;
   font-weight: 800;
@@ -62,5 +62,12 @@ button:after {
 .justify {
   @media (min-width: 1024px) {
     justify-content: start !important;
+  }
+}
+
+.padding-logo {
+  padding-right: 5rem;
+  @media (min-width: 1024px) {
+    padding-right: 0px;
   }
 }
