@@ -7,8 +7,6 @@
     'animate-fade-up': !isScrolled,
     'animate-fade-down': isScrolled
   }"
-  (mouseenter)="onNavHover(true)"
-  (mouseleave)="onNavHover(true)"
 >
   <div #pageContainer class="top-0 z-50 navbar">
     <div
@@ -44,7 +42,13 @@
         >
           <img
             name="home"
-            class="flex justify-center h-12 cursor-pointer lg:h-14"
+            [ngClass]="{
+              'transition-all duration-300 flex justify-center cursor-pointer': true,
+              'h-20': !isScrolled && !isMobile,
+              'h-12': isScrolled && !isMobile,
+              'h-16': !isScrolled && isMobile,
+              'h-10': isScrolled && isMobile
+            }"
             [src]="logoSrc"
             draggable="false"
             oncontextmenu="return false;"
@@ -52,7 +56,7 @@
         </div>
         <div
           class="w-full bg-white lg:w-fit lg:bg-transparent lg:navbar-center mt-14 lg:mt-0 lg:items-center lg:flex"
-          [class.dropdown-content]="isBelow1024"
+          [class.dropdown-content]="isMobile"
         >
           <div class="w-full lg:flex">
             <ul

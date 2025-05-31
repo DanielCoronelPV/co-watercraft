@@ -31,15 +31,19 @@ export class HeaderComponent {
   isBelow1024: boolean = window.innerWidth < 1024; // Ya tienes esto, ¡perfecto!
 
   logoSrc: string = '/assets/img/logo_co_watercraft_blanco_sinfondo_grande.png';
-  buttonTextColor: string =
-    window.innerWidth < 1025 ? 'text-black' : 'text-white';
+
+  get isMobile(): boolean {
+    return window.innerWidth < 1024;
+  }
+    get buttonTextColor(): string {
+  if (this.isMobile) return 'text-gray-700';
+  return this.isBelowViewport ? 'text-gray-700' : 'text-white';
+}
 
   constructor(private router: Router, private scrollService: ScrollService) {}
 
   ngAfterViewInit() {
-    if (this.context !== 'seccion') {
-      this.clickOnFirstButton();
-    }
+      // this.clickOnFirstButton();
   }
 
   pages = [
@@ -61,6 +65,8 @@ export class HeaderComponent {
     // },
   ];
 
+
+
   get filteredPages() {
     if (this.context === 'front-page') {
       return this.pages.filter((page) => page.id !== 'inicio');
@@ -77,23 +83,15 @@ export class HeaderComponent {
     }
   }
 
-  private clickOnFirstButton() {
-    if (this.buttons && this.buttons.length > 0) {
-      const firstButton = this.buttons.first.nativeElement;
-      setTimeout(() => {
-        firstButton.focus();
-        firstButton.click();
-      }, 400);
-    }
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.isBelow1024 = event.target.innerWidth < 1024;
-    // Modifica buttonTextColor aquí
-    this.buttonTextColor =
-      event.target.innerWidth < 1025 ? 'text-black' : 'text-white';
-  }
+  // private clickOnFirstButton() {
+  //   if (this.buttons && this.buttons.length > 0) {
+  //     const firstButton = this.buttons.first.nativeElement;
+  //     setTimeout(() => {
+  //       firstButton.focus();
+  //       firstButton.click();
+  //     }, 400);
+  //   }
+  // }
 
   @HostListener('document:scroll', ['$event'])
   onScroll() {
@@ -129,40 +127,6 @@ export class HeaderComponent {
 
       if (visibleElement) {
         this.focusOnElement(visibleElement.id);
-      }
-
-      // La lógica de `buttonTextColor` en el scroll debe coexistir con la del resize
-      // Si la pantalla es pequeña, `buttonTextColor` ya es 'text-black' por `onResize`.
-      // Si la pantalla es grande y haces scroll, entonces se vuelve 'text-black'.
-      if (this.isBelowViewport) {
-        // Solo cambia a text-black si la pantalla es grande, de lo contrario mantén lo que `onResize` estableció.
-        if (window.innerWidth >= 1025) {
-          this.buttonTextColor = 'text-black';
-        }
-      } else {
-        // Si la pantalla es grande y no hay scroll, vuelve a 'text-white'.
-        if (window.innerWidth >= 1025) {
-          this.buttonTextColor = 'text-white';
-        }
-      }
-    }
-  }
-
-  // La lógica de onNavHover también debe considerar el tamaño de la pantalla
-  onNavHover(isHovered: boolean) {
-    if (window.innerWidth < 1025) {
-      // Si la pantalla es pequeña, siempre es text-black, ignora el hover
-      this.buttonTextColor = 'text-black';
-    } else {
-      // Lógica original para pantallas grandes
-      if (isHovered && this.isBelowViewport) {
-        this.buttonTextColor = 'text-black';
-      } else {
-        if (this.isBelowViewport) {
-          this.buttonTextColor = 'text-white'; // Esto parece un error aquí, debería ser text-black si isBelowViewport es true
-        } else {
-          this.buttonTextColor = 'text-white'; // Si no hay scroll, text-white
-        }
       }
     }
   }

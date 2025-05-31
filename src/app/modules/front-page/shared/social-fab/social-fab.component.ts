@@ -29,7 +29,7 @@ export class SocialFabComponent {
     {
       label: 'WhatsApp',
       icon: 'fab fa-whatsapp',
-      link: 'https://wa.me/1413212-6471',
+      link: 'https://wa.me/14132126471',
       class: 'fab-whatsapp',
     },
     {
@@ -48,7 +48,7 @@ export class SocialFabComponent {
     {
       label: 'Location',
       icon: 'fas fa-location-dot',
-      link: 'https://www.google.com/maps/place/Pittsfield,+Massachusetts+01201,+EE.+UU./@42.4512515,-73.4253626,11z/data=!3m1!4b1!4m6!3m5!1s0x89e744bbcf99cc3f:0xd78834ed84912f23!8m2!3d42.4500845!4d-73.2453824!16zL20vMHR5Z2w?hl=es&entry=ttu&g_ep=EgoyMDI1MDUyNy4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D',
+      link: 'https://www.google.com/maps/place/Condado+de+Berkshire,+Massachusetts,+EE.+UU./@42.3928579,-73.2284436,10z/data=!3m1!4b1!4m6!3m5!1s0x89e40f35ad5002af:0x169b500c1396290b!8m2!3d42.311782!4d-73.1821623!16zL20vMGszZ2o?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D',
       class: 'fab-phone',
     },
   ];
