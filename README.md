@@ -6,11 +6,11 @@ It is a project (in progress) that seeks to showcase the services and products a
 ---
 
 ## 📌 Description
-This is my personal portfolio, designed and developed with **Angular** to highlight my projects and professional profile.  
-The main goals of this project were to:  
-- Practice and deepen my knowledge of **Angular** and **TypeScript**  
-- Apply concepts of **component-based architecture** and **responsive design**  
-- Build a professional space to showcase the services and products available, with various ways to contact them
+This is a web application designed and developed to serve as a digital showcase for the company services and products.
+The primary goals of this project were to:
+- Clearly and attractively present a catalog of services and products.
+- Implement a fully responsive design to ensure an optimal user experience on any device.
+- Integrate multiple and accessible contact options to facilitate direct and effective communication with potential clients.
 
 ---
 
