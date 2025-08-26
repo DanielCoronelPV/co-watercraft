@@ -1,36 +1,87 @@
-# Angular Panel Layout Template
 
-Este proyecto es un template para construir aplicaciones web con un diseño de panel utilizando Angular v16, Tailwind CSS y Flowbite.
+# 💼 Co Watercraft
 
-## Estructura del Proyecto
+It is a project (in progress) that seeks to showcase the services and products available, with various ways to contact them.
 
-El proyecto está organizado en un módulo principal llamado `panel-layout`, que contiene los siguientes componentes:
+---
 
-- `navbar`: Componente que representa la barra de navegación en la parte superior.
-- `panel-content`: Módulo de contenido que se renderiza mediante el uso de `router-outlet`.
+## 📌 Description
+This is my personal portfolio, designed and developed with **Angular** to highlight my projects and professional profile.  
+The main goals of this project were to:  
+- Practice and deepen my knowledge of **Angular** and **TypeScript**  
+- Apply concepts of **component-based architecture** and **responsive design**  
+- Build a professional space to showcase the services and products available, with various ways to contact them
 
-## Tecnologías Utilizadas
+---
 
-- **Angular v17**: El framework de desarrollo para construir la aplicación web.
-- **Tailwind CSS**: Un framework de utilidades de CSS de bajo nivel para construir interfaces de usuario modernas y receptivas.
-- **Flowbite**: Un conjunto de bloques de construcción HTML/CSS reutilizables construidos con Tailwind CSS.
+## 🛠 Technologies used
+- **Angular 17** (framework)  
+- **TypeScript** (logic and structure)  
+- **JavaScript (ES6+)** (interactivity)  
+- **HTML5** (markup)  
+- **CSS3** (styling and responsive design)  
+- **Visual Studio Code** (development environment)  
+- **Vercel** (deployment and hosting)  
 
-## Instalación
+---
 
-1. Clona este repositorio: `git clone https://github.com/DanielCoronelPv/co-watercraft.git`
-2. Navega al directorio del proyecto: `cd template`
-3. Instala las dependencias: `npm install`
-4. Inicia la aplicación: `npm start`
-5. Abre tu navegador y visita `http://localhost:4200/`
+## ✨ Features
+- Responsive and modern design  
+- Custom-built components from scratch  
+- Clean and organized project structure  
+- Optimized performance for deployment on Netlify  
 
-## Personalización
+---
 
-Puedes personalizar fácilmente este template para adaptarlo a tus necesidades específicas. Aquí hay algunas áreas clave que puedes ajustar:
+## 🌐 Live Demo
+You can view the live version of this portfolio here:
+👉 [cowatercraft.com/](https://www.cowatercraft.com/)
 
-- **Estilos y Diseño**: Tailwind CSS facilita la personalización del diseño. Puedes ajustar los estilos en el archivo `styles.css` y en otros archivos de estilos según sea necesario.
+---
 
-- **Componentes Adicionales**: Si necesitas agregar más componentes o módulos, simplemente crea nuevos archivos y registra los componentes en el módulo principal.
+## 📸 Preview
+![Co Watercraft Screenshot](src/assets/Co-Watercraft.webp)
 
-## Licencia
+---
 
-Este proyecto está bajo la licencia [MIT](LICENSE). Puedes usar, modificar y distribuir este proyecto según tus necesidades. ¡Diviértete construyendo tu aplicación con Angular, Tailwind CSS y Flowbite!
+## 📁 Structure
+```bash
+/portfolio
+│
+├── src
+│   ├── app
+│   │   ├── Modules
+│   │   │   └── index
+│   │   │       ├── components
+│   │   │       │   ├── about
+│   │   │       │   ├── carousel
+│   │   │       │   ├── contact
+│   │   │       │   ├── exp-progress
+│   │   │       │   ├── experience
+│   │   │       │   ├── footer
+│   │   │       │   ├── formation
+│   │   │       │   ├── gitprev
+│   │   │       │   ├── index
+│   │   │       │   ├── navbar
+│   │   │       │   ├── polygon-skills
+│   │   │       │   ├── profile
+│   │   │       │   └── projects
+│   │   │       └── index.module.ts
+│   │   ├── services
+│   │   │   ├── gitprev.service.ts
+│   │   │   └── theme.service.ts
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.ts
+│   │   └── app.module.ts
+│   ├── assets
+│   ├── index.html
+│   └── main.ts
+│
+├── angular.json
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+└── README.md
+```
