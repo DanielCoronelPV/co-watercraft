@@ -50,32 +50,25 @@ You can view the live version of this portfolio here:
 │
 ├── src
 │   ├── app
+|   |   ├── interfaces
 │   │   ├── Modules
-│   │   │   └── index
+│   │   │   └── front-page
 │   │   │       ├── components
-│   │   │       │   ├── about
-│   │   │       │   ├── carousel
-│   │   │       │   ├── contact
-│   │   │       │   ├── exp-progress
-│   │   │       │   ├── experience
+│   │   │       │   ├── aventuras
+│   │   │       │   ├── coming-soom
 │   │   │       │   ├── footer
-│   │   │       │   ├── formation
-│   │   │       │   ├── gitprev
-│   │   │       │   ├── index
-│   │   │       │   ├── navbar
-│   │   │       │   ├── polygon-skills
-│   │   │       │   ├── profile
-│   │   │       │   └── projects
-│   │   │       └── index.module.ts
-│   │   ├── services
-│   │   │   ├── gitprev.service.ts
-│   │   │   └── theme.service.ts
+│   │   │       │   ├── header
+│   │   │       │   ├── home
+│   │   |   |   ├── services
+│   │   │   |   ├── shared
+│   │   │       |   ├── social-fab
 │   │   ├── app-routing.module.ts
 │   │   ├── app.component.html
 │   │   ├── app.component.scss
 │   │   ├── app.component.ts
 │   │   └── app.module.ts
 │   ├── assets
+│   ├── environments
 │   ├── index.html
 │   └── main.ts
 │
