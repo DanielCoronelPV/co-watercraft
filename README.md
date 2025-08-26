@@ -44,6 +44,26 @@ You can view the live version of this portfolio here:
 
 ---
 
+## 🚀 How to run this project
+```bash
+# Clone the repository
+git clone https://github.com/DanielCoronelPV/co-watercraft.git
+
+# Navigate into the project folder
+cd co-watercraft
+
+# Install dependencies
+npm install
+
+# Run the development server
+ng serve -o
+
+# The app will be available at
+http://localhost:4200/
+```
+
+---
+
 ## 📁 Structure
 ```bash
 /portfolio
